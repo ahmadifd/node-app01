@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "node ./app00/index00.js",
-    "dev": "nodemon ./app00/index00.js"
+    "start": "node ./app00/index01.js",
+    "dev": "nodemon ./app00/index01.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": " ^3.0.1"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "jalali-moment": "^3.3.11"
+  }
 }
