@@ -2,8 +2,8 @@ import users from "./02/users.js";
 import express from "express";
 import { body, validationResult } from "express-validator";
 import helmet from "helmet";
-import morgan from "morgan";
-import config from 'config'
+import config from "config";
+
 
 const app = express();
 
@@ -12,16 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(helmet());
 
+// console.log("Application Name:", config.get("name"));
+// console.log("Application version:", config.get("version"));
+// console.log("sms:", config.get("SMS.ip"));
 
-console.log("Application Name:", config.get("name"));
-console.log("Application version:", config.get("version"));
-console.log("sms:", config.get("SMS.ip"));
-
-
-if (app.get("env") === "development") {
-  console.log("morgan is active");
-  app.use(morgan("tiny"));
-}
+// if (app.get("env") === "development") {
+//   console.log("morgan is active");
+// }
 
 app.use((req, res, next) => {
   // res.send('this response is coming from middleware 1')
