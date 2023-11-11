@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "node index.js",
-    "dev": "nodemon index.js"
+    "start" : "node ./app00/index00.js",
+    "dev": "nodemon ./app00/index00.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": " ^3.0.1"
-  }
+  },
+  "type": "module"
 }
