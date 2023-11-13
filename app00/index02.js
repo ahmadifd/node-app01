@@ -23,33 +23,69 @@ const employee = mongoose.model("Employee", employeeSchema);
 await mongoose
   .connect(
     "mongodb://root:XMBjo2J0QUCl9dRu@services.irn1.chabokan.net:2039/CompanyDB"
+    //"mongodb+srv://ahmadifd:ua3jZ8BW6w0PIMb5@ac-huiyzvg-shard-00-01.jad41dh.mongodb.net/?retryWrites=true&w=majority"
   )
   .then(async () => {
     console.log("connected");
 
-    const employee1 = new employee({
-      first_name: "farshid",
-      last_name: "ahmadi",
-    });
+    // const employee1 = new employee({
+    //   first_name: "farshid",
+    //   last_name: "ahmadi",
+    // });
 
-    const employee2 = new employee({
-      first_name: "farshad",
-      last_name: "ahmadi",
-    });
+    // const employee2 = new employee({
+    //   first_name: "farshad",
+    //   last_name: "ahmadi",
+    // });
 
-    await employee
-      .create(employee2)
-      .then(() => {
-        console.log("created");
-      })
-      .catch((err) => console.log("not created", err));
+    // await employee
+    //   .create(employee2)
+    //   .then(() => {
+    //     console.log("created");
+    //   })
+    //   .catch((err) => console.log("not created", err));
 
-    await employee1
-      .save()
-      .then(() => {
-        console.log("created");
-      })
-      .catch((err) => console.log("not created", err));
+    // await employee1
+    //   .save()
+    //   .then(() => {
+    //     console.log("created");
+    //   })
+    //   .catch((err) => console.log("not created", err));
+
+    // const employees = await employee.find();
+    // console.log(employees);
+
+    // const employee3 = await employee.find({
+    //   first_name: "farshid" ,
+    //   last_name: "ahmadi",
+    // });
+    // console.log(employee3);
+
+    // const employees1 = await employee
+    //   .find({
+    //     last_name: "ahmadi",
+    //   })
+    //   .limit(1)
+    //   .sort({ first_name: 1 }) //-1
+    //   .select({ first_name: 1 });
+
+    // const employees2 = await employee.find().count();
+
+    // const employees3 = await employee.find({ age: { $gte: 20, $ne: 10 } });//gt gte lt lte eq ne
+    //const employees4 = await employee.find({ age: { $in: [10, 20, 30] } });
+
+    // const employees5 = await employee
+    //   .find()
+    //   .or({ age: { $in: [10, 20, 30] } }, { first_name: "farshid" }); //and
+
+    // const pn = 1;
+    // const ps = 2;
+    // const employees6 = await employee
+    //   .find()
+    //   .skip((pn - 1) * ps)
+    //   .limit(ps);
+
+    //console.log(employees6);
   })
   .catch((err) => console.log("not connected", err));
 
