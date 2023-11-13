@@ -1,5 +1,7 @@
 import controller from "../controller.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken"
+import config from "config";
 
 export default new (class extends controller {
   async register(req, res) {
@@ -30,6 +32,23 @@ export default new (class extends controller {
   }
 
   async login(req, res) {
-    res.send("login");
+    const user = await this.User.findOne({ email: req.body.email });
+    if (!user) {
+      return this.response({
+        res,
+        code: 400,
+        message: "invalid eamil or password",
+      });
+    }
+    const isValid = await bcrypt.compare(req.body.password, user.password);
+    if (!isValid) {
+      return this.response({
+        res,
+        code: 400,
+        message: "invalid eamil or password",
+      });
+    }
+    const token = jwt.sign({ _id: user.id }, config.get("jwt_key"));
+    this.response({ res, message: "successfuly logged in", data: { token } });
   }
 })();

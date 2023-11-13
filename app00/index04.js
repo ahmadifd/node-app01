@@ -18,3 +18,22 @@ app.use("/api", router);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`));
+
+
+//class class1 {
+  //   x = 0;
+  //   constructor() {}
+  //   func1() {
+  //     this.x = 1;
+  //     this.func2();
+  //   }
+  //   func2() {
+  //     this.x = 2;
+  //   }
+  // }
+  
+  // const c1 = new class1();
+  // const c3 = c1.func1.bind(c1);
+  // c3();
+  
+  // console.log(c1.x);

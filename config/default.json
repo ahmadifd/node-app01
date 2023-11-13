@@ -5,5 +5,6 @@
     "db":
     { 
       "address" : "mongodb://root:XMBjo2J0QUCl9dRu@services.irn1.chabokan.net:2039/CompanyDB"
-    }
+    },
+    "jwt_key": "sdfjhj234t2fwd0982i34rf23feoijf042SDF"
 } 
