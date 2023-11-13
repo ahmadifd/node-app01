@@ -1,5 +1,9 @@
 {
     "name": "express App",
     "version": "1.0.0",
-    "DATABASE_URI" : "mongodb+srv://ahmadifd:MYr2A3Tyd9Xxg0aJ@cluster0.jad41dh.mongodb.net/CompanyDB?retryWrites=true&w=majority"
-  } 
+    "DATABASE_URI" : "mongodb+srv://ahmadifd:MYr2A3Tyd9Xxg0aJ@cluster0.jad41dh.mongodb.net/CompanyDB?retryWrites=true&w=majority",
+    "db":
+    { 
+      "address" : "mongodb://root:XMBjo2J0QUCl9dRu@services.irn1.chabokan.net:2039/CompanyDB"
+    }
+} 

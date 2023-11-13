@@ -33,6 +33,9 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    return res.status(400).send("invalid id");
+
   const user = await User.findById(req.params.id);
   if (!user)
     return res.status(404).json({
@@ -84,6 +87,9 @@ router.put(
     body("last_name", "last name cant be empty").notEmpty(),
   ],
   async (req, res) => {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id))
+      return res.status(400).send("invalid id");
+
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({
@@ -118,6 +124,9 @@ router.put(
 );
 
 router.delete("/:id", async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    return res.status(400).send("invalid id");
+
   const user = await User.findByIdAndDelete(req.params.id);
   if (!user) {
     return res.status(404).json({
