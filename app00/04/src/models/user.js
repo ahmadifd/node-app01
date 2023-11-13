@@ -1,2 +1,13 @@
+import mongoose from "mongoose";
+import timestamp from "mongoose-timestamp";
 
-export default 1;
+const userSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  password: { type: String, required: true },
+  isadmin: { type: Boolean, default: false },
+});
+userSchema.plugin(timestamp);
+
+const User = mongoose.model("User", userSchema);
+export default User;
