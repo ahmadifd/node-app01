@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import config from "config";
 import router from "./04/src/routes/index.js";
+import winston from 'winston'
 
 const app = express();
 
@@ -13,6 +14,22 @@ mongoose
   .connect(config.get("db.address"))
   .then(() => console.log("connected to mongodb"))
   .catch(() => console.log("could not connect"));
+
+
+  process.on('uncaughtException', (ex)=>{
+    console.log('uncaught exception');
+    winston.error(ex.message,ex);
+    process.exit(1);
+  });
+  
+  process.on('unhandledRejection', (ex)=>{
+    console.log('unhandleRejection');
+    winston.error(ex.message,ex);
+    process.exit(1);
+  });
+  
+  winston.add(new winston.transports.File({filename: 'logfile.log'}));
+
 
 app.use("/api", router);
 

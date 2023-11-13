@@ -6,6 +6,7 @@ import adminRouter from "./admin/index.js";
 import error from "./../middlewares/error.js";
 import ('express-async-errors');
 
+
 const router = Router();
 router.use("/auth", authRouter);
 router.use("/user", isLoggined, userrouter);
