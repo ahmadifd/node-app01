@@ -34,7 +34,7 @@ export default new (class extends controller {
   async login(req, res) {
 
     // try {
-       throw new Error("There is an Error!");
+     //  throw new Error("There is an Error!");
     // } catch (er) {}
 
     const user = await this.User.findOne({ email: req.body.email });

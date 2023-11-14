@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./app00/index04.js",
-    "dev": "nodemon ./app00/index04.js"
+    "start": "node ./app00/index05.js",
+    "dev": "nodemon ./app00/index05.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "bcrypt": "^5.1.1",
     "config": "^3.3.9",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.2",
     "express-validator": "^7.0.1",
     "helmet": "^7.1.0",
     "jalali-moment": "^3.3.11",
