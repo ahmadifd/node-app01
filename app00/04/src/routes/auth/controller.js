@@ -1,6 +1,6 @@
 import controller from "../controller.js";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 import config from "config";
 
 export default new (class extends controller {
@@ -32,6 +32,11 @@ export default new (class extends controller {
   }
 
   async login(req, res) {
+
+    // try {
+       throw new Error("There is an Error!");
+    // } catch (er) {}
+
     const user = await this.User.findOne({ email: req.body.email });
     if (!user) {
       return this.response({

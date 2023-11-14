@@ -4,7 +4,7 @@ import User from "./../models/user.js";
 
 async function isLoggined(req, res, next) {
   const token = req.header("x-auth-token");
-  if (!token) res.status(401).send("access denied");
+  if (!token) res.status(401).send("access denied Jigar");
   try {
     const decoded = jwt.verify(token, config.get("jwt_key"));
     const user = await User.findById(decoded._id);
@@ -21,4 +21,4 @@ async function isAdmin(req, res, next) {
   next();
 }
 
-export { isLoggined ,isAdmin };
+export { isLoggined, isAdmin };
