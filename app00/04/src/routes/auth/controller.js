@@ -54,6 +54,6 @@ export default new (class extends controller {
       });
     }
     const token = jwt.sign({ _id: user.id }, config.get("jwt_key"));
-    this.response({ res, message: "successfuly logged in", data: { token } });
+    this.response({ res, message: "successfuly logged in Farshid Ahmadi", data: { token } });
   }
 })();
