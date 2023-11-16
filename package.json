@@ -23,7 +23,7 @@
     "jalali-moment": "^3.3.11",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.2.0",
-    "mongoose": "^8.0.0",
+    "mongoose": "^6.10.1",
     "mongoose-timestamp": "^0.6.0",
     "winston": "^3.11.0"
   }
