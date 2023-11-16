@@ -4,7 +4,8 @@
     "DATABASE_URI" : "mongodb+srv://ahmadifd:MYr2A3Tyd9Xxg0aJ@cluster0.jad41dh.mongodb.net/CompanyDB?retryWrites=true&w=majority",
     "db":
     { 
-      "address" : "mongodb://root:XMBjo2J0QUCl9dRu@services.irn1.chabokan.net:2039/CompanyDB"
+      "address1" : "mongodb://root:XMBjo2J0QUCl9dRu@services.irn1.chabokan.net:2039/CompanyDB",
+      "address2" :"mongodb+srv://ahmadifd:47mcOiksjZjyvH1Y@cluster0.jad41dh.mongodb.net/CompanyDB"
     },
     "jwt_key": "sdfjhj234t2fwd0982i34rf23feoijf042SDF"
 } 

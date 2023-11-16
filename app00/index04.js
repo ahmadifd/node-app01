@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose
-  .connect(config.get("db.address"))
+  .connect(config.get("db.address2"))
   .then(() => console.log("connected to mongodb"))
   .catch(() => console.log("could not connect"));
 
